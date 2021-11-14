@@ -15,21 +15,11 @@ export class AircraftService {
     return this.http.get<AircraftVM[]>(this.url + 'GetAllAircraft');
   }
 
-//-----
 AddAircrftPhoto(formData:any) {
   return this.http.post(this.url +'AddAircraftPhoto', formData, {reportProgress: true, observe: 'events'})
 }
-//----
     
   AddAircraftData(aircraftData: AircraftVM): Observable<AircraftVM> {
-    // const formData: FormData = new FormData();
-    // aircraftData.append('myFile', this.fileToUpload);
-    // formData.append('altText', this.fileForm.value.altText);
-    // formData.append('description', this.fileForm.value.description);
-    // return this.http.post('http://localhost:48608/FileManager', formData,
-    // {
-    //   headers : new HttpHeaders()})
-    // .subscribe(() => alert("File uploaded"));
 
     const httpHeaders = { headers: new HttpHeaders({ 'Content-Type': 'application/json' }) };
     return this.http.post<AircraftVM>(this.url + 'AddAircraft', aircraftData, httpHeaders);
