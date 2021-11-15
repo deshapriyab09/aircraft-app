@@ -74,13 +74,13 @@ export class AircraftComponent implements OnInit {
 
     this.aircraftForm = this.formbulider.group(
       {
-        make: ['',[Validators.required, Validators.minLength(1)]],
-        model:['',Validators.required],
+        make: ['', [Validators.required, Validators.maxLength(128)]],
+        model:['', [Validators.required, Validators.maxLength(128)]],
         registration:['',Validators.required],
-        location:['',Validators.required],
+        location:['', [Validators.required, Validators.maxLength(255)]],
         photoPath: [''],
         tempImgPath:[''],
-        dateTime:['',Validators.required]
+        date:['',Validators.required]
       }
     )
 
@@ -110,6 +110,17 @@ export class AircraftComponent implements OnInit {
     return this.aircraftForm.get('make')
   }
 
+  get Model(){
+    return this.aircraftForm.get('model')
+  }
+
+  get Location(){
+    return this.aircraftForm.get('location')
+  }
+
+  get Registration(){
+    return this.aircraftForm.get('registration')
+  }
 
   // GetAllAircraft() {
   //   this.aircraftList1 = this.aircraftServiceService.GetAllAircraft()
@@ -159,9 +170,9 @@ export class AircraftComponent implements OnInit {
       this.aircraftForm.controls['registration'].setValue(aircraftResult.registration);
       this.aircraftForm.controls['location'].setValue(aircraftResult.location);
       this.aircraftForm.controls['tempImgPath'].setValue(aircraftResult.photoPath);
-      // this.aircraftForm.controls['dateTime'].setValue( aircraftResult.dateTime);
-      this.aircraftForm.controls['dateTime'].setValue(this.datePipe.transform( aircraftResult.dateTime, 'YYYY-MM-dd')); 
-      // this.aircraftForm.controls['dateTime'].setValue(this.datePipe.transform( aircraftResult.dateTime, 'dd/MM/yyyy hh:mm'));
+      // this.aircraftForm.controls['date'].setValue( aircraftResult.date);
+      this.aircraftForm.controls['date'].setValue(this.datePipe.transform( aircraftResult.date, 'YYYY-MM-dd')); 
+      // this.aircraftForm.controls['date'].setValue(this.datePipe.transform( aircraftResult.date, 'dd/MM/yyyy hh:mm'));
       this.imagePath =  aircraftResult.photoPath;
       //('currentDate').split('T')[0];
       console.log(this.aircraftForm.controls,"Data");

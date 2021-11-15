@@ -5,5 +5,5 @@ export class AircraftVM {
     registration: string;
     location: string;
     photoPath: string;
-    dateTime : string;
+    date : string;
   }

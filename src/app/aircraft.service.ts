@@ -54,7 +54,7 @@ AddAircrftPhoto(formData:any) {
   //     registration: '',
   //     location: '',
   //     image:'',
-  //     dateTime: '1900-01-01',
+  //     date: '1900-01-01',
   //   }
   // }
 }

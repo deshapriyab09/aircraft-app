@@ -14,9 +14,7 @@ The aim of this project is to implement the aircraft CRUD operations requirment 
 ````
 2. Create SQL Server DB Using the bellow migration code.
 ````
-dotnet ef migrations add AddedDataAnotations -s Aircraft API -p .\Aircraft API.DataAccess
-
-dotnet ef database update -s Aircraft API -p .\Aircraft API.DataAccess
+dotnet ef database update -s AircraftAPI -p .\AircraftAPI.DataAccess
 ````
 3.Aircraft Front Project : Install npm packages using 
 ````

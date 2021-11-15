@@ -5,5 +5,5 @@ export interface AircraftDto {
     registration: string;
     location: string;
     photoPath: string;
-    dateTime : string;
+    date : string;
   }
