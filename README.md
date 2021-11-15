@@ -9,7 +9,7 @@ The aim of this project is to implement the aircraft CRUD operations requirment 
 1. Aircraft API Project : Edit appsettings.json -> Connection String as Per Your SQL Server
 ````
 "ConnectionStrings": {
-    "DbConnection": "Server=YourPcName; Database=Aircraft sDb; User Id=sa; Password=1234"
+    "DbConnection": "Server=YourPcName; Database=AircraftDb; User Id=sa; Password=1234"
   },
 ````
 2. Create SQL Server DB Using the bellow migration code.
@@ -18,16 +18,10 @@ dotnet ef database update -s AircraftAPI -p .\AircraftAPI.DataAccess
 ````
 3.Aircraft Front Project : Install npm packages using 
 ````
-npm install -g @angular/cli
+npm install
 ````
-3.To Install other packages(datepicker component & Toster Component)
-```` 
-ng add ngx-bootstrap --component datepicker
 
-npm i ngx-toastr
-npm install ngx - toastr--save
-````
-5.Aircraft Front Project : Edit below backend URLs as per your  backend URL
+4.Aircraft Front Project : Edit below backend URLs as per your  backend URL
 aircraftservice.ts and aircraft.component.ts
 ````
  public createImgPath = (serverPath: string) => {
